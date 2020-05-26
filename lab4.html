@@ -3,7 +3,6 @@
 <head>
 	<meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
 	<script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'>
-		$('#proceed').delay(5000).show(0);
 	</script>
 </head>
 <body>
@@ -21,11 +20,20 @@
 			<p><label><input name="darknessVal" type="radio" value="mediumvioletred" />   <span style="background-color: mediumvioletred; width: 100px; display:inline-block">&nbsp;</span></label></p>
 		</fieldset>
 		<br>
-		<input type="submit">
-		<p>You need to wait 0 before you can proceed</p>
-		<button type="button" id="proceed" style="display: none;">proceed</button>
-		
+		<input type="submit">		
 	</form>
+	
+	<script type="text/javascript">
+	<!--
+	// Hide the button
+	SoSciTools.submitButtonsHide();
+	// After a timeout of 60 sec = 60000 ms, display the button
+	window.setTimeout(
+	  SoSciTools.submitButtonsDisplay, 60000
+	)
+	// -->
+	</script>
+	
 	<script language='Javascript'>turkSetAssignmentID();</script>
 </body>
 </html>
